@@ -17,7 +17,12 @@
             <%= link_to "SPIRIT in ESRD", root_path, class: "brand-logo" %>
             <div class="right hide-on-med-and-down">
               <% if user_signed_in? %>
-                Logged in as <strong><%= link_to current_user.email, edit_user_registration_path(current_user.id) %></strong>.
+                Logged in as 
+                <% if current_user.first_name %>
+                  <strong><%= link_to current_user.first_name, edit_user_registration_path(current_user.id) %></strong>
+                <% else %>
+                  <strong><%= link_to current_user.email, edit_user_registration_path(current_user.id) %></strong>
+                <% end %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               <% else %>
                 <%= link_to "Sign up", new_user_registration_path %> |

@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div>
+  <h4><%= @post.title %></h4>
+  
+</div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @post.subject %>
-</p>
+<div>
+  <strong><%= @post.subject %></strong>
+  
+</div>
+
+<h5>Replies:</h5>
+<%= render @post.replies %>
+
+<div>
+  <h5>Reply</h5>
+
+<%= render 'replies/form' %>
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

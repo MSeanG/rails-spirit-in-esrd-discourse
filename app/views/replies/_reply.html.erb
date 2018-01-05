@@ -1,0 +1,3 @@
+<p> <%= reply.subject %></p>
+<%= link_to "Edit", edit_post_reply_path(reply.post, reply) %>
+<%= link_to "Delete", post_reply_path(reply.post, reply), method: :delete, data: { confirm: "Are you sure?" } %>

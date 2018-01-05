@@ -1,5 +1,9 @@
-<h4>Edit <%= resource_name.to_s.humanize %></h4>
-
+<h4>Edit <%= resource_name.to_s.humanize %>
+<span>
+<%= @user.first_name[0].upcase %>
+<%= @user.last_name[0].upcase %>
+</span>
+</h4>
 <%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 

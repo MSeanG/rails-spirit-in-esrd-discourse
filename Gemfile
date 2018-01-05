@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'materialize-sass'
+gem 'devise'
+gem 'cancancan'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -2,12 +2,16 @@
 
 <div>
   <h4><%= @post.title %></h4>
-  
 </div>
 
 <div>
+  Posted by <%= @post.user.first_name %> on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> 
+</div>
+
+<br>
+
+<div>
   <strong><%= @post.subject %></strong>
-  
 </div>
 
 <h5>Replies:</h5>

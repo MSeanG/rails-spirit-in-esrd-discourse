@@ -1,32 +1,50 @@
 <p id="notice"><%= notice %></p>
+<div class="center">
+  <h4>Discussions</h4>
+</div>
+<div class="divider"></div>
+<div>
+<% @posts.each do |post| %>
+  <div class="row">
 
-<h4>Discussions</h4>
-
-<table class="striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subject</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.subject %></td>
-        <td><%= link_to 'Show', post %></td>
+    <div class="col s2">
+      <div class="row">
+        <h6>
+          <%= post.try(:user).try(:first_name)%><br>
+          <%= post.try(:user).try(:last_name)%>
+        </h6>
+      </div>
+      <div class="row">
+        
+      </div>
+    </div>
+    <div class="col s10">
+      <div class="row">
+        <h5><%= post.title %></h5>
+      </div>
+      <div class="row">
+        
+        Created <%= time_ago_in_words(post.created_at) %> ago
+      </div>
+      <div class="row">
+        <%= post.subject %>
+      </div> 
+      <div class="row">
+        <span><%= link_to 'Show', post %></span>
         <% if can? :update, post %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <span> | <%= link_to 'Edit', edit_post_path(post) %></span>
         <% end %>
         <% if can? :destroy, post %>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <span> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+
+  </div>
+  <div class="divider"></div>
+<% end %>
+</div>
+
 
 <br>
 

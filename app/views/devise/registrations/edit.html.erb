@@ -7,32 +7,32 @@
 <%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, value: @user.first_name, autofocus: true, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autocomplete: "last_name" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :credentials %><br />
     <%= f.text_field :credentials, autocomplete: "credentials" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :state %><br />
     <%= f.text_field :state, autocomplete: "state" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :phone_number %><br />
     <%= f.text_field :phone_number, autocomplete: "phone_number" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
@@ -41,7 +41,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
@@ -50,12 +50,12 @@
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>

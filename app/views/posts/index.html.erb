@@ -11,8 +11,12 @@
       <div class="row">
         <h6>
           <%= post.try(:user).try(:first_name)%><br>
-          <%= post.try(:user).try(:last_name)%>
+          <%= post.try(:user).try(:last_name)%><br>
         </h6>
+        <div>
+          <%= post.try(:user).try(:credentials)%><br>
+          <%= post.try(:user).try(:state)%><br>
+        </div>
       </div>
       <div class="row">
         

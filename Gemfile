@@ -35,6 +35,7 @@ gem 'materialize-sass'
 gem 'devise'
 gem 'cancancan'
 gem 'figaro'
+gem 'browser-timezone-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

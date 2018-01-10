@@ -1,4 +1,8 @@
 
 <p> <%= reply.subject %></p>
+<div>
+  Reply by <%= reply.user.first_name %> on <%= reply.created_at.strftime("%B %d %Y, %l:%M%P") %> 
+</div>
 <%= link_to "Edit", edit_post_reply_path(reply.post, reply) %>
 <%= link_to "Delete", post_reply_path(reply.post, reply), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="divider"></div>

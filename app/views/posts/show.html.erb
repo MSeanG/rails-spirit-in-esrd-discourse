@@ -4,24 +4,27 @@
   <h4><%= @post.title %></h4>
 </div>
 
-<div>
-  Posted by <%= @post.user.first_name %> on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> 
-</div>
-
 <br>
 
 <div>
   <strong><%= @post.subject %></strong>
 </div>
+<div>
+  Posted by <%= @post.user.first_name %> on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> 
+</div>
+<br>
+<div class="divider"></div>
 
-<h5>Replies:</h5>
+<h5>Comments:</h5>
 <%= render @post.replies %>
 
-<div>
-  <h5>Reply</h5>
+<% if user_signed_in? %>
+  <div>
+    <h6>Reply</h6>
 
-<%= render 'replies/form' %>
-</div>
+  <%= render 'replies/form' %>
+  </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+<% end %>

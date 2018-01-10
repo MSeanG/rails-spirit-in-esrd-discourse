@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
 
   <body>
@@ -22,7 +24,7 @@
                   <strong><%= link_to current_user.first_name, edit_user_registration_path(current_user.id) %></strong>
                 <% else %>
                   <strong><%= link_to current_user.email, edit_user_registration_path(current_user.id) %></strong>
-                <% end %>
+                <% end %>&nbsp;|&nbsp;
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               <% else %>
                 <%= link_to "Sign up", new_user_registration_path %> |

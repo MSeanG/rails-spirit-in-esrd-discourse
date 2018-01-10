@@ -12,6 +12,10 @@ class RepliesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   def edit
 
   end

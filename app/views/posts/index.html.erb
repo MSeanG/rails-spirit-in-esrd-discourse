@@ -27,7 +27,6 @@
         <h5><%= post.title %></h5>
       </div>
       <div class="row">
-        
         Created <%= time_ago_in_words(post.created_at) %> ago
       </div>
       <div class="row">
@@ -39,7 +38,7 @@
           <span> | <%= link_to 'Edit', edit_post_path(post) %></span>
         <% end %>
         <% if can? :destroy, post %>
-          <span> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <span> | <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
         <% end %>
       </div>
     </div>

@@ -53,9 +53,8 @@ ActiveRecord::Schema.define(version: 20180108143705) do
     t.string "credentials"
     t.string "state"
     t.string "phone_number"
-    t.boolean "is_admin"
-    t.string "is_active"
-    t.string "boolean"
+    t.boolean "admin"
+    t.boolean "active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["post_id"], name: "index_users_on_post_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

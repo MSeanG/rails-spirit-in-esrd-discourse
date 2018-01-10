@@ -9,13 +9,13 @@ User.destroy_all
 Post.destroy_all
 Reply.destroy_all
 dev = User.create!(
-  email: "admin@myapp.com",
+  email: "sgilmore@michael-sean.com",
   first_name: "Sean",
   last_name: "Gilmore",
   credentials: "Developer",
   state: "GA",
   phone_number: "123-456-7890",
   password: "123456",
-  is_admin: true,
-  is_active: true
+  admin: true,
+  active: true
 )

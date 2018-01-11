@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: SPIRIT-in-ESRD-Discourse_production
-  username: SPIRIT-in-ESRD-Discourse
-  password: <%= ENV['SPIRIT-IN-ESRD-DISCOURSE_DATABASE_PASSWORD'] %>
+#  username: SPIRIT-in-ESRD-Discourse
+#  password: <%= ENV['SPIRIT-IN-ESRD-DISCOURSE_DATABASE_PASSWORD'] %>

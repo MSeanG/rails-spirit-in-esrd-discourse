@@ -36,10 +36,10 @@
       <div class="row">
         <span><%= link_to 'Show', post %></span>
         <% if can? :update, post %>
-          <span> | <%= link_to 'Edit', edit_post_path(post) %></span>
+          <span> &#124; <%= link_to 'Edit', edit_post_path(post) %></span>
         <% end %>
         <% if can? :destroy, post %>
-          <span> | <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <span> &#124; <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
         <% end %>
       </div>
     </div>

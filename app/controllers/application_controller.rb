@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
     flash.keep(:notice)
     redirect_to root_url
   end
+
+  def after_sign_up_path_for(resource)
+    redirct_to root_url
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    redirct_to root_url
+  end 
   
   protected
   def configure_permitted_parameters

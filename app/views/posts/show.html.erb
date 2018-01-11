@@ -1,11 +1,8 @@
+<div class="row">
 <p id="notice"><%= notice %></p>
 
 <div>
   <h4><%= @post.title %></h4>
-</div>
-
-<div>
-  Posted by <%= @post.user.first_name %> on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> 
 </div>
 
 <br>
@@ -14,14 +11,30 @@
   <strong><%= @post.subject %></strong>
 </div>
 
-<h5>Replies:</h5>
-<%= render @post.replies %>
+<br>
 
 <div>
-  <h5>Reply</h5>
+  Posted by <%= @post.user.first_name %> on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> 
+</div>
+
+<br>
+
+<h5>Comments:</h5>
+<div>
+<%= render @post.replies %>
+</div>
+
+<div class="divider"></div>
+<% if user_signed_in? %>
+<div>
+  <h6>Reply</h6>
 
 <%= render 'replies/form' %>
 </div>
 
+<br>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
+</div>

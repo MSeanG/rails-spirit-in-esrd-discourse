@@ -22,7 +22,13 @@
                   <strong><%= link_to current_user.first_name, edit_user_registration_path(current_user.id) %></strong>
                 <% else %>
                   <strong><%= link_to current_user.email, edit_user_registration_path(current_user.id) %></strong>
+                <% end %>&nbsp;|&nbsp;
+
+                <% if current_user.admin == true %>
+                <a href="/admin">Admin</a>&nbsp;|&nbsp;
+                <% else %>
                 <% end %>
+
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               <% else %>
                 <%= link_to "Sign up", new_user_registration_path %> |

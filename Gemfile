@@ -36,6 +36,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'figaro'
 gem 'browser-timezone-rails'
+gem 'rails_admin', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
